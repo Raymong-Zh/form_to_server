@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Please Query</title>
+</head>
+<body>
+	
+	<form action="/" method="post">
+		<legend>Please Query:</legend>
+		<p><input name="systype" placeholder="type"></p>
+		<p><input name="ostype" placeholder="ostype"></p>
+		<p><input name="vchost" placeholder="vchost"></p>
+		<p><input name="vcusername" placeholder="vcusername"></p>
+		<p><input name="vcpassword" placeholder="vcpassword" type="password"></p>
+		<p><input name="datacenter" placeholder="datacenter"></p>
+		<p><input name="esxi_hostname" placeholder="esxi_hostname"></p>
+		<p><input name="vcname" placeholder="vcname"></p>
+		<p><input name="vmtemplate" placeholder="vmtemplate"></p>
+		<p><input name="disksize" placeholder="disksize"></p>
+		<p><input name="datastore" placeholder="datastore"></p>
+		<p><input name="memorysize" placeholder="memorysize"></p>
+		<p><input name="cpusnum" placeholder="cpusnum"></p>
+		<p><input name="corenum" placeholder="corenum"></p>
+		<p><input name="subnet" placeholder="subnet"></p>
+		<p><input name="ip" placeholder="ip"></p>
+		<p><input name="netmask" placeholder="netmask"></p>
+		<p><input name="gateway" placeholder="gateway"></p>
+		<p><input name="subnet2" placeholder="subnet2"></p>
+		<p><input name="ip2" placeholder="ip2"></p>
+		<p><input name="netmask2" placeholder="netmask2"></p>
+		<p><input name="annotation" placeholder="annotation"></p>
+		<p><button type="submit">Query</button></p>
+	</form>
+	{% if message %}
+	<p style="color:red">{{ message }}</p>
+	{% endif %}
+</body>
+</html>
