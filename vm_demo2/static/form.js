@@ -15,13 +15,13 @@ var datastore = $('datastore');
 	for(var i=0;i<len;i++){
 		var ostypeOpt = document.createElement('option');
 		ostypeOpt.innerText = templates[i]['ostype'];
-		ostypeOpt.value = i;
+		ostypeOpt.className = i.toString();
 		ostype.appendChild(ostypeOpt)
 	}
 })();
 
 function showTemp(obj){
-	var val = obj.options[obj.selectedIndex].value;
+	var val = parseInt(obj.options[obj.selectedIndex].className);
 
 	if (val != null) {
 		vmtemplate.length = 1;//clear options before
@@ -29,7 +29,7 @@ function showTemp(obj){
 		for (var j=0; j<tempLen;j++){
 			var tempOpt = document.createElement('option');
 			tempOpt.innerText = templates[val]["templates"][j];
-			tempOpt.value = j;
+			tempOpt.className = j.toString();
 			vmtemplate.appendChild(tempOpt);
 		}
 	}
@@ -41,7 +41,7 @@ function showTemp(obj){
 	for(var i=0;i<len;i++){
 		var vchostOpt = document.createElement('option');
 		vchostOpt.innerText = datacenters[i]['vchost'];
-		vchostOpt.value = i;
+		vchostOpt.className = i.toString();
 		vchost.appendChild(vchostOpt)
 	}
 })();
@@ -51,7 +51,7 @@ function showTemp(obj){
 
 
 function showRes(obj){
-	var val = obj.options[obj.selectedIndex].value;
+	var val = parseInt(obj.options[obj.selectedIndex].className);
 
 	if (val != null) {
 		datacenter.length = 1;//clear options before
@@ -59,7 +59,7 @@ function showRes(obj){
 		for (var j=0; j<datacenterLen;j++){
 			var datacenterOpt = document.createElement('option');
 			datacenterOpt.innerText = datacenters[val]["datacenters"][j];
-			datacenterOpt.value = j;
+			datacenterOpt.className = j.toString();
 			datacenter.appendChild(datacenterOpt);
 		}
 
@@ -68,7 +68,7 @@ function showRes(obj){
 		for (var j=0; j<esxihostLen;j++){
 			var esxihostOpt = document.createElement('option');
 			esxihostOpt.innerText = esxihosts[val]["esxihosts"][j];
-			esxihostOpt.value = j;
+			esxihostOpt.className = j.toString();
 			esxihost.appendChild(esxihostOpt);
 		}
 
@@ -77,7 +77,7 @@ function showRes(obj){
 		for (var j=0; j<datastoreLen;j++){
 			var datastoreOpt = document.createElement('option');
 			datastoreOpt.innerText = datastores[val]["datastores"][j];
-			datastoreOpt.value = j;
+			datastoreOpt.className = j.toString();
 			datastore.appendChild(datastoreOpt);
 		}
 
@@ -96,7 +96,6 @@ function showSub(obj, sub) {
 	}else{
 		sub.value = "";
 	}
-		
 
 }
 
